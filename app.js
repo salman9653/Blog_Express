@@ -25,6 +25,16 @@ app.get('/contact', (req,res) => {
   res.render('contact', {content: contactContent})
 })
 
+app.get('/compose', (req,res) => {
+  res.render('compose')
+})
+
+app.post('/compose', (req,res) => {
+    const post = {
+      title : req.body.title,
+      content : req.body.postBody
+    }
+})
 
 app.listen(3030, () => {
   console.log("Server started on port 3030");
